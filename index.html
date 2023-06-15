@@ -26,9 +26,24 @@
 
   gtag('config', 'G-QJS8JEG1J5');
 
-  function gtag_contact() {
-    gtag('event', 'contact');
-  }
+  var contactButton1 = document.getElementById('contact1');
+  contactButton1.addEventListener('click', function() {
+    // Trigger the custom event
+    gtag('event', 'contact', {
+      'event_category': 'Button Click',
+      'event_label': 'Contact Button 1'
+    });
+  });
+
+  var contactButton2 = document.getElementById('contact2');
+  contactButton2.addEventListener('click', function() {
+    // Trigger the custom event
+    gtag('event', 'contact', {
+      'event_category': 'Button Click',
+      'event_label': 'Contact Button 2'
+    });
+  });  
+
 
 </script>
 
@@ -141,7 +156,7 @@
               </div>
 
               <div class="navbar-btn d-none d-sm-inline-block">
-                <a href="#contact" onclick="gtag_contact" class="ud-main-btn ud-login-btn">
+                <a href="#contact" id="contact1" class="ud-main-btn ud-login-btn">
                   Contact Us
                 </a>
                 <a href="https://discord.gg/3fBqUdMXzX" class="ud-main-btn ud-white-btn" target="_blank">
@@ -275,7 +290,7 @@
                 <p class="ud-feature-desc">
                   We actively seek strategic collaborations with like-minded stakeholders to bring our game projects to life. Leveraging expertise and resources, we create synergistic opportunities for success.
                 </p>
-                <a href="#contact" class="ud-feature-link" onclick="gtag_contact">
+                <a href="#contact" class="ud-feature-link" id="contact2">
                   Contact Us
                 </a>
               </div>
